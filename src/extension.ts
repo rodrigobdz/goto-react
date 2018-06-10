@@ -1,12 +1,11 @@
 "use strict";
-import * as vscode from "vscode";
+import { ExtensionContext, commands } from "vscode";
 import GotoReact from "./goto-react";
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
   const gotoReact = new GotoReact();
-  let disposable = vscode.commands.registerCommand(
-    "extension.openCounterpart",
-    gotoReact.openCounterpart
+  let disposable = commands.registerCommand("extension.openCounterpart", () =>
+    gotoReact.openCounterpart()
   );
 
   context.subscriptions.push(disposable);

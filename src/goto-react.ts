@@ -1,24 +1,24 @@
 "use strict";
-import * as vscode from "vscode";
-import * as path from "path";
+import { window, workspace } from "vscode";
+import { normalize } from "path";
 
 export default class GotoReact {
-  private readonly CONTAINER = "container";
-  private readonly COMPONENT = "component";
+  readonly CONTAINER: string = "container";
+  readonly COMPONENT: string = "component";
 
   /**
    * Opens the component/container of the currently active container/component.
    */
-  public openCounterpart() {
-    const editor = vscode.window.activeTextEditor;
+  openCounterpart() {
+    const editor = window.activeTextEditor;
 
     if (!editor) {
-      return vscode.window.showWarningMessage("There is no active editor.");
+      return window.showWarningMessage("There is no active editor.");
     }
 
     // Get the normalized relative path of the active editor
-    const normalizedRelativePath = path.normalize(
-      vscode.workspace.asRelativePath(editor.document.fileName)
+    const normalizedRelativePath = normalize(
+      workspace.asRelativePath(editor.document.fileName)
     );
 
     // Check (case sensitive) if file is either a component or a container
@@ -40,7 +40,7 @@ export default class GotoReact {
     }
 
     // Error handling when path has a different format than expected.
-    return vscode.window.showErrorMessage(
+    return window.showErrorMessage(
       `Current file is neither a ${this.CONTAINER} nor a ${this.COMPONENT}.`
     );
   }
@@ -58,14 +58,14 @@ export default class GotoReact {
   ) {
     // Check if file has counterpart
     const searchPath = filePath.replace(type + "s", replacementType + "s");
-    let result = (await vscode.workspace.findFiles(searchPath, null, 1))![0];
+    let result = (await workspace.findFiles(searchPath, null, 1))![0];
 
     if (!result) {
-      return vscode.window.showErrorMessage(
+      return window.showErrorMessage(
         `No ${replacementType} found for ${type}.`
       );
     }
 
-    vscode.window.showTextDocument(result);
+    window.showTextDocument(result);
   }
 }
