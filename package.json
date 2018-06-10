@@ -2,7 +2,7 @@
   "name": "goto-react",
   "displayName": "goto React",
   "description": "Open the corresponding component/container of the currently open container/component.",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "publisher": "rodrigobdz",
   "engines": {
     "vscode": "^1.23.0"
