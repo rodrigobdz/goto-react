@@ -1,21 +1,24 @@
 {
   "name": "goto-react",
   "displayName": "goto React",
-  "description":
-    "Open the corresponding component/container of the currently open container/component.",
+  "description": "Open the corresponding component/container of the currently open container/component.",
   "version": "0.0.1",
   "publisher": "rodrigobdz",
   "engines": {
     "vscode": "^1.23.0"
   },
-  "categories": ["Other"],
-  "activationEvents": ["onCommand:extension.sayHello"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.openCounterpart"
+  ],
   "main": "./out/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.sayHello",
-        "title": "goto-react: Hello World"
+        "command": "extension.openCounterpart",
+        "title": "goto-react: Open component/container"
       }
     ]
   },
