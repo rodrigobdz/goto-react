@@ -2,11 +2,17 @@
   "name": "goto-react",
   "displayName": "goto React",
   "description": "Open the corresponding component/container of the currently open container/component.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "rodrigobdz",
   "engines": {
     "vscode": "^1.23.0"
   },
+  "homepage": "https://github.com/rodrigobdz/goto-react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rodrigobdz/goto-react.git"
+  },
+  "icon": "assets/logo.png",
   "categories": [
     "Other"
   ],

@@ -1,10 +1,10 @@
 # goto React
 
-[Visual Studio Code](https://code.visualstudio.com/) Extension to open the container of the currently open component and viceversa.
+[Visual Studio Code](https://code.visualstudio.com/) Extension for React projects to open the container of the currently open component and viceversa.
 
 ## Installation
 
-Download goto React directly from the VSCode Marketplace.
+Download [goto React](https://marketplace.visualstudio.com/items?itemName=rodrigobdz.goto-react) directly from the VSCode Marketplace.
 
 ## Usage
 
